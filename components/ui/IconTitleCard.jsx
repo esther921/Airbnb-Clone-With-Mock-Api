@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { ICONDATA } from "../../utils/iconData";
+import Link from "next/link";
+import Wrapper from "../wrapper/Wrapper";
 
 const IconTitleCard = () => {
   const iconScroll = useRef(null);
@@ -28,37 +30,52 @@ const IconTitleCard = () => {
     }
   };
   return (
-    <div
-      ref={iconScroll}
-      onScroll={generateScroll}
-      className="flex gap-12 overflow-x-auto scrollbar-hide smooth-scroll ease-in-out duration-300"
-    >
-      {ICONDATA.map((items, i) => {
-        const { alt, src } = items;
-        return (
-          <>
-            <div key={i} className={`flex flex-col items-center`}>
-              <Image src={src} alt={alt} width={24} height={24} />
-              <p>{alt}</p>
-            </div>
-
-            <div
-              onClick={() => {
-                iconScroll.current.scrollLeft -= 302;
-              }}
-              className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
-            >
-              <a href="#slide3" className=" border-white bg-white text-black">
-                ❮
-              </a>
-              <a href="#slide1" className="border-white bg-white text-black">
-                ❯
-              </a>
-            </div>
-          </>
-        );
-      })}
-    </div>
+    <Wrapper>
+      <div
+        ref={iconScroll}
+        onScroll={generateScroll}
+        className="flex gap-12 overflow-x-auto scrollbar-hide smooth-scroll ease-in-out duration-300 w-full"
+      >
+        {ICONDATA.map((items, i) => {
+          const { alt, src } = items;
+          return (
+            <>
+              <Link
+                href={`/slug/${alt}`}
+                key={i}
+                className={`flex flex-col items-center text-gray-400 hover:text-black active:border-black active:border-b-2 hover:border-b-2 hover:pb-2 active:pb-2 active:text-black`}
+              >
+                <Image src={src} alt={alt} width={24} height={24} />
+                <p className="text-xs flex w- justify-center whitespace-nowrap">
+                  {alt}
+                </p>
+              </Link>
+              {/* Scrolling buttons  */}
+              <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <button
+                  onClick={() => {
+                    iconScroll.current.scrollLeft -= 302;
+                  }}
+                  href=""
+                  className=" border-white bg-white text-black"
+                >
+                  ❮
+                </button>
+                <button
+                  onClick={() => {
+                    iconScroll.current.scrollLeft += 302;
+                  }}
+                  href=""
+                  className="border-white bg-white text-black"
+                >
+                  ❯
+                </button>
+              </div>
+            </>
+          );
+        })}
+      </div>
+    </Wrapper>
   );
 };
 

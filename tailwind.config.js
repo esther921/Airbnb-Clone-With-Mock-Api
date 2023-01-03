@@ -9,10 +9,13 @@ module.exports = {
       screens: {
         desktop: "90rem",
       },
+      fontFamily: {
+        sans: ["Roboto", "arial"],
+      },
     },
   },
   daisyui: {
     themes: false,
   },
-  plugins: require("tailwind-scrollbar-hide"),
+  plugins: [require("tailwind-scrollbar-hide")],
 };
