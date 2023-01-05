@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-import { RxDotFilled } from "react-icons/rx";
+// import { RxDotFilled } from "react-icons/rx";
 import Image from "next/image";
 import Wrapper from "../wrapper/Wrapper";
 
-function App({ country, rating, date, costPerNight }) {
+export const ImageCard = ({ country, rating, date, costPerNight }) => {
   const slides = [
     {
       url: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2620&q=80",
@@ -83,6 +83,4 @@ function App({ country, rating, date, costPerNight }) {
       </div>
     </Wrapper>
   );
-}
-
-export default App;
+};

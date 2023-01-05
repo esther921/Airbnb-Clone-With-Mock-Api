@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Navbar from "../components/layout/Navbar";
-import ImageCard from "../components/ui/ImageCard";
+import { ImageCard } from "../components/ui/ImageCard";
 
 export default function Home() {
   return (
