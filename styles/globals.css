@@ -10,3 +10,7 @@
 ::selection {
     @apply text-white bg-[#428BFF];
 }
+
+.carousel .control-dots .dot {
+    @apply w-1
+}

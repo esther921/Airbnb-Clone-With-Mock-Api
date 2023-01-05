@@ -7,9 +7,11 @@ import SearchBar from "../ui/SearchBar";
 const Navbar = () => {
   return (
     <div className="">
-      <SearchBar />
-      <div className="divide divide-y-2"></div>
-      <IconTitleCard />
+      <div>
+        <SearchBar />
+        <div className="divide divide-y-2"></div>
+        <IconTitleCard />
+      </div>
     </div>
   );
 };

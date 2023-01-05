@@ -43,7 +43,7 @@ const IconTitleCard = () => {
               <Link
                 href={`/slug/${alt}`}
                 key={i}
-                className={`flex flex-col items-center text-gray-400 hover:text-black active:border-black active:border-b-2 hover:border-b-2 hover:pb-2 active:pb-2 active:text-black`}
+                className={`flex flex-col items-center text-gray-400 hover:text-black active:border-black active:border-b-2 hover:border-b-2 hover:mb-3 hover:transition-none hover:animate-none active:text-black`}
               >
                 <Image src={src} alt={alt} width={24} height={24} />
                 <p className="text-xs flex w- justify-center whitespace-nowrap">

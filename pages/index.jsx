@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Navbar from "../components/layout/Navbar";
-import Wrapper from "../components/wrapper/Wrapper";
+import ImageCard from "../components/ui/ImageCard";
 
 export default function Home() {
   return (
@@ -13,6 +13,12 @@ export default function Home() {
       </Head>
 
       <Navbar />
+      <ImageCard
+        costPerNight={"hello"}
+        country={"hi"}
+        date={"say"}
+        rating={"cheese"}
+      />
     </>
   );
 }
