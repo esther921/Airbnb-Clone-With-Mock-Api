@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Navbar from "../components/layout/Navbar";
 import { ImageCard } from "../components/ui/ImageCard";
 
@@ -11,8 +12,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Navbar />
+
       <ImageCard
         costPerNight={"hello"}
         country={"hi"}

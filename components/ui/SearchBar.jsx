@@ -4,21 +4,21 @@ import Wrapper from "../wrapper/Wrapper";
 const SearchBar = () => {
   return (
     <Wrapper styles={""}>
-      <div className="flex justify-between items-center my-4 ">
+      <div className="flex justify-between items-center h-[5rem]">
         <Image
           alt={"AirbnbTextLogo"}
           src="../airbnbTextLogo.svg"
           width={118}
-          height={64}
-          className="h-full flex flex-col items-center"
+          height={40}
+          className=""
         />
         {/* Second item */}
         <div className="border border-gray-200 h-[48px] shadow-lg rounded-full max-w-fit flex gap-4 px-2 items-center">
-          <p className="text-sm font-semibold pl-6">
+          <p className="text-base pl-6">
             Anywhere{" "}
             <span className="border border-gray-300 ml-2 max-h-[24px]"></span>
           </p>
-          <p className="text-sm font-semibold">
+          <p className="text-base">
             Any week{" "}
             <span className="border border-gray-300 ml-3 max-h-[24px]"></span>
           </p>
@@ -36,7 +36,7 @@ const SearchBar = () => {
         </div>
         {/* Third item */}
         <div className="flex gap-8 items-center">
-          <p className="font-semibold text-sm">Airbnb your home</p>
+          <p className="font-medium text-base">Airbnb your home</p>
           <Image alt={"World Map"} src="../globe.svg" width={20} height={20} />
           <div className="border border-gray-300 flex rounded-full pl-4 pr-2 h-12 gap-4">
             <Image

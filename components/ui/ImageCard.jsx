@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-// import { RxDotFilled } from "react-icons/rx";
 import Image from "next/image";
 import Wrapper from "../wrapper/Wrapper";
+import Link from "next/link";
 
 export const ImageCard = ({ country, rating, date, costPerNight }) => {
   const slides = [
@@ -43,16 +43,19 @@ export const ImageCard = ({ country, rating, date, costPerNight }) => {
   };
 
   return (
-    <Wrapper styles={"mt-12"}>
+    <Wrapper styles={"mt-6"}>
       <div className="max-w-[271px] h-[257px] relative group">
-        <div
-          style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-          className="w-full h-full rounded-2xl bg-center bg-cover duration-500 relative"
-        >
-          <div className="absolute right-5 top-4 select-none">
-            <Image src="../like.svg" alt={""} width={21} height={10} />
+        <Link href="details/1">
+          <div
+            style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+            className="w-full h-full rounded-2xl bg-center bg-cover duration-500 relative cursor-pointer"
+          >
+            <div className="absolute right-5 top-4 select-none">
+              <Image src="../like.svg" alt={""} width={21} height={10} />
+            </div>
           </div>
-        </div>
+        </Link>
+
         {/* Left Arrow */}
         <div className="hidden group-hover:block absolute top-[50%] p-1 -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full  bg-white bg-opacity-90 hover:bg-opacity-100 text-black cursor-pointer">
           <BiChevronLeft onClick={prevSlide} width={0} height={0} />
@@ -73,13 +76,13 @@ export const ImageCard = ({ country, rating, date, costPerNight }) => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col max-w-[271px]">
+      <div className="flex flex-col max-w-[271px] mt-3">
         <div className="flex justify-between">
-          <p>{country}</p>
-          <p className="">{rating}</p>
+          <p className="">{country}</p>
+          <p>{rating}</p>
         </div>
-        <p>{date}</p>
-        <p>{costPerNight}</p>
+        <p className="text-gray-400">{date}</p>
+        <p className="text-gray-400">{costPerNight}</p>
       </div>
     </Wrapper>
   );
